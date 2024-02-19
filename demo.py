@@ -23,7 +23,7 @@ if __name__ == '__main__':
     sklearn_model = linear_model.LogisticRegression(C=C, solver='lbfgs', tol=1e-8, fit_intercept=False)
 
     # prepare tensorflow model to compute influence function
-    tf_model = LR(tf.Session(), weight_decay=WEIGHT_DECAY)
+    tf_model = LR(weight_decay=WEIGHT_DECAY)
 
     # train
     sklearn_model.fit(x_train, y_train.ravel())
